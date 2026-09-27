@@ -1,0 +1,25 @@
+version: 2
+
+models:
+
+  - name: fct_daily_revenue
+    description: "Daily revenue fact table"
+
+    columns:
+
+      - name: order_date
+        description: "Date of the orders"
+        tests:
+          - not_null
+
+      - name: total_orders
+        description: "Number of orders"
+        tests:
+          - not_null
+          - test_non_negative
+
+      - name: daily_revenue
+        description: "Total revenue generated per day"
+        tests:
+          - not_null
+          - test_non_negative
